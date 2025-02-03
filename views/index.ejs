@@ -1,0 +1,13 @@
+<%- include('partials/headers') %>
+<a href="/posts/new">New post</a>
+<% posts.forEach(post => {  %>
+    <div class="post">
+        <h2><a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
+        <p><%= post.content.substring(0, 100) %>...</p>
+        <a href="/posts/<%= post._id %>/edit">Edit</a>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+<% }) %>
+<%- include('partials/footers') %>
