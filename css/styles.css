@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #0ff;
+    font-size: 3em;
+    transition: color 0.3s ease;
+}
+
+h1 a:hover {
+    color: #ff0;
+}
+
+.new-post-btn, .edit-btn, .delete-btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.new-post-btn:hover, .edit-btn:hover, .delete-btn:hover {
+    background-color: #ff0;
+    color: #000;
+}
+
+.post {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: scale(1.05);
+}
+
+.post h2 a {
+    text-decoration: none;
+    color: #0ff;
+    transition: color 0.3s ease;
+}
+
+.post h2 a:hover {
+    color: #f0f;
+}
+
+.post p {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+button {
+    cursor: pointer;
+}

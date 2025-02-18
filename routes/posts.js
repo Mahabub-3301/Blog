@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = express.Router();
-const postschema = require('../models/posts');
+const postschema = require('../models/post');
 
 routes.get('/',async (req,res)=>{
     try{
@@ -39,7 +39,7 @@ routes.get('/:id',async (req,res)=>{
     }
 });
 
-routes.get('/:id/edits',async (req,res)=>{
+routes.get('/:id/edit',async (req,res)=>{
     try{
         const post = await postschema.findById(req.params.id);
         res.render('edit',{post});
@@ -52,7 +52,7 @@ routes.get('/:id/edits',async (req,res)=>{
 routes.put('/:id',async (req,res)=>{
     try{
         const {title , content} = req.body;
-        await postschema.findByIdAndUpdate(req.params.id);
+        await postschema.findByIdAndUpdate(req.params.id, {title , content});
         res.redirect(`/posts/${req.params.id}`);
     }catch(err){
         console.error(err);
@@ -62,8 +62,9 @@ routes.put('/:id',async (req,res)=>{
 
 routes.delete('/:id', async (req, res)=>{
     try{
+        
         await postschema.findByIdAndDelete(req.params.id);
-        res.redirect('/post');
+        res.redirect('/posts');
 
     }catch(err){
         console.error(err);
